@@ -23,16 +23,22 @@
       
     </main>
     <script id="recipe-template" type="text/x-handlebars-template">
-    <div>
-    {{name}}
-    {{
-    {{> recipeDetailsPartial }}
-    </div>
-    
-      
+      <div>
+        {{name}}
+        {{link}}
+        {{> recipeDetailsPartial }}
+      </div>
     </script>
     
-    
+    <script id="recipe-details-partial" type="text/x-handlebars-template">
+      <div>
+        {{description}}
+        <ul>
+          {{#each ingredients}}
+            <li>{{name}}</li>
+          {{/each}}
+        </ul>
+    </script>
     
     <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
     <script src="index.js"></script>
